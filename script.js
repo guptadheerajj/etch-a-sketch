@@ -32,6 +32,21 @@ function createGrid(gridSize) {
 	}
 }
 
+const colorChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+function getOneChar(index) {
+	return colorChar[index];
+}
+
+function generateRandomColor() {
+	let hexCode = "#";
+	for (let i = 0; i < 6; i++) {
+		let index = Math.floor(Math.random() * 16);
+		hexCode += getOneChar(index);
+	}
+	return hexCode;
+}
+
 dialog.addEventListener("close", () => {
 	console.log(dialog.returnValue);
 	createGrid(dialog.returnValue);
@@ -39,13 +54,16 @@ dialog.addEventListener("close", () => {
 
 	boxes.forEach((box) => {
 		box.addEventListener("mouseenter", () => {
-			box.classList.add("color-box");
+			// box.classList.add("color-box");
+			let randomColor = generateRandomColor();
+			box.style.backgroundColor = randomColor;
 		});
 	});
 
 	reset.addEventListener("click", () => {
 		boxes.forEach((box) => {
-			box.classList.remove("color-box");
+			// box.classList.remove("color-box");
+			box.style.backgroundColor = "#ffffffff";
 		});
 	});
 });

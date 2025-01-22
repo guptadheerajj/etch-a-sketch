@@ -22,7 +22,7 @@ header {
 
 .sketch-board {
 	display: flex;
-	border: 2px solid black;
+	border: 1px solid #ffecdb;
 	flex-wrap: wrap;
 }
 
@@ -34,7 +34,7 @@ header {
 
 .box {
 	flex: 1 1 0%; /*flex: 1;*/
-	border: 2px solid black;
+	border: 2px solid #ffecdb;
 }
 
 .color-box {
