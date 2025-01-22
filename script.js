@@ -21,4 +21,12 @@ function createGrid(gridSize = 16) {
 
 createGrid(5);
 
-gut 
+const boxes = document.querySelectorAll(".box");
+
+boxes.forEach((box) => {
+	box.addEventListener("mouseenter", () => {
+		box.classList.add("color-box");
+		// box.style.backgroundColor = "cyan";
+		// box.setAttribute("style", "background: cyan;");
+	});
+});
