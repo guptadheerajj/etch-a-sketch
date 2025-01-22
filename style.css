@@ -1,7 +1,6 @@
 html {
 	box-sizing: border-box;
 }
-
 *,
 *::before,
 *::after {
@@ -9,8 +8,7 @@ html {
 	padding: 0;
 	box-sizing: inherit;
 }
-
-header{
+header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -19,7 +17,7 @@ header{
 
 .sketch-board {
 	width: 500px;
-	height: 500px
+	height: 500px;
 }
 
 .sketch-board {
@@ -37,7 +35,6 @@ header{
 .box {
 	flex: 1 1 0%; /*flex: 1;*/
 	border: 2px solid black;
-	/* background-color: red; */
 }
 
 .color-box {

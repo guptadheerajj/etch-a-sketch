@@ -19,14 +19,16 @@
 	</header>
 
 	<dialog>
-		<div class="modal-container">
-			<p>Enter the number (1 to 100) of squares per side of the grid</p>
-			<input type="text" id="size" placeholder="16" autofocus>
-			<div class="dialog-buttons">
-				<button>Cancel</button>
-				<button>Confirm</button>
+		<form>
+			<div class="modal-container">
+				<p>Enter the number of squares per side of the grid(1 to 100)</p>
+				<input type="text" id="size" placeholder="16" autofocus>
+				<div class="dialog-buttons">
+					<button value="16" formmethod="dialog" id="dialog-cancel">Cancel</button>
+					<button id="dialog-confirm">Confirm</button>
+				</div>
 			</div>
-		</div>
+		</form>
 	</dialog>
 
 	<script src="script.js"></script>
