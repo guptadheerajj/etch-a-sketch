@@ -43,3 +43,31 @@ header{
 .color-box {
 	background-color: aqua;
 }
+
+dialog {
+	margin: auto;
+}
+
+.modal-container {
+	width: 250px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+	gap: 8px;
+	border-radius: 8px;
+	text-align: center;
+}
+
+dialog::backdrop {
+	background-color: #a1a1a17e;
+}
+
+.dialog-buttons {
+	display: flex;
+	gap: 8px;
+}
+
+.dialog-buttons button {
+	flex: 1 1 0;
+}
