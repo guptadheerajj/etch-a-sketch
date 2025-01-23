@@ -8,6 +8,12 @@ html {
 	padding: 0;
 	box-sizing: inherit;
 }
+
+body {
+	background-color: #1f2937;
+	color: #d1d5db;
+}
+
 header {
 	display: flex;
 	flex-direction: column;
@@ -16,14 +22,15 @@ header {
 }
 
 .sketch-board {
-	width: 500px;
-	height: 500px;
+	width: 600px;
+	height: 600px;
 }
 
 .sketch-board {
 	display: flex;
-	border: 1px solid #ffecdb;
+	border: 2px solid black;
 	flex-wrap: wrap;
+	background-color: white;
 }
 
 .row {
@@ -34,7 +41,7 @@ header {
 
 .box {
 	flex: 1 1 0%; /*flex: 1;*/
-	border: 2px solid #ffecdb;
+	border: 1px solid black;
 }
 
 .color-box {
@@ -67,4 +74,8 @@ dialog::backdrop {
 
 .dialog-buttons button {
 	flex: 1 1 0;
+}
+
+button {
+	padding: 5px 15px;
 }

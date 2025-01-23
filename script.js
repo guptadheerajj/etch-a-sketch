@@ -3,14 +3,13 @@ const setGridSize = document.querySelector(".set-grid-size");
 const reset = document.querySelector(".reset");
 const dialog = document.querySelector("dialog");
 const input = document.querySelector("#size");
-const dialogCancel = document.querySelector("#dialog-cancel");
 const dialogConfirm = document.querySelector("#dialog-confirm");
 
 setGridSize.addEventListener("click", () => {
 	dialog.showModal();
 });
 
-function createOneRow(gridSize = 16) {
+function createOneRow(gridSize) {
 	let newRow = document.createElement("div");
 	newRow.classList.add("row");
 	sketchBoard.appendChild(newRow);
@@ -30,9 +29,48 @@ function createGrid(gridSize) {
 	for (let i = 0; i < gridSize; i++) {
 		createOneRow(gridSize);
 	}
+	const boxes = document.querySelectorAll(".box");
+	addListenersToBox(boxes);
 }
 
-const colorChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+function addListenersToBox(boxes) {
+	boxes.forEach((box) => {
+		box.addEventListener("mouseenter", () => {
+			// box.classList.add("color-box");
+			let randomColor = generateRandomColor();
+			box.style.backgroundColor = randomColor;
+		});
+	});
+
+	reset.addEventListener("click", () => {
+		boxes.forEach((box) => {
+			// box.classList.remove("color-box");
+			box.style.backgroundColor = "#ffffffff";
+		});
+	});
+}
+
+// create grid of size 16 bby default
+createGrid(16);
+
+const colorChar = [
+	"0",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+	"A",
+	"B",
+	"C",
+	"D",
+	"E",
+	"F",
+];
 
 function getOneChar(index) {
 	return colorChar[index];
@@ -48,28 +86,7 @@ function generateRandomColor() {
 }
 
 dialog.addEventListener("close", () => {
-	console.log(dialog.returnValue);
 	createGrid(dialog.returnValue);
-	const boxes = document.querySelectorAll(".box");
-
-	boxes.forEach((box) => {
-		box.addEventListener("mouseenter", () => {
-			// box.classList.add("color-box");
-			let randomColor = generateRandomColor();
-			box.style.backgroundColor = randomColor;
-		});
-	});
-
-	reset.addEventListener("click", () => {
-		boxes.forEach((box) => {
-			// box.classList.remove("color-box");
-			box.style.backgroundColor = "#ffffffff";
-		});
-	});
-});
-
-dialogCancel.addEventListener("click", () => {
-	console.log(dialogCancel.value);
 });
 
 dialogConfirm.addEventListener("click", (event) => {
