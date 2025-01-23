@@ -10,7 +10,7 @@ html {
 }
 
 body {
-	background-color: #1f2937;
+	background-color: #111827;
 	color: #d1d5db;
 }
 
@@ -41,7 +41,7 @@ header {
 
 .box {
 	flex: 1 1 0%; /*flex: 1;*/
-	border: 1px solid black;
+	border: 1px solid rgba(92, 85, 85, 0.388);
 }
 
 .color-box {
@@ -65,6 +65,7 @@ dialog {
 
 dialog::backdrop {
 	background-color: #a1a1a17e;
+	background-color: #1f2937c0;
 }
 
 .dialog-buttons {
