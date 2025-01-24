@@ -37,7 +37,6 @@ function addListenersToBox(boxes) {
 	boxes.forEach((box) => {
 		let timesMouseEnter = 0;
 		box.addEventListener("mouseenter", () => {
-			// box.classList.add("color-box");
 			timesMouseEnter++;
 			let opacityValue = `${10 * timesMouseEnter}%`;
 			let randomColor = generateRandomColor();
@@ -45,14 +44,12 @@ function addListenersToBox(boxes) {
 			if (timesMouseEnter !== 10) {
 				box.style.opacity = opacityValue;
 			}
-		});
-	});
 
-	reset.addEventListener("click", () => {
-		boxes.forEach((box) => {
-			// box.classList.remove("color-box");
-			box.style.backgroundColor = "#ffffffff";
-			box.style.opacity = "100%"
+			reset.addEventListener("click", () => {
+				box.style.backgroundColor = "#ffffff";
+				box.style.opacity = "100%";
+				timesMouseEnter = 0;
+			});
 		});
 	});
 }
